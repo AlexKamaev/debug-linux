@@ -11,3 +11,4 @@ jobs:
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
       with:
         testCafeArgs: "chrome tests"
+        branch: "debug-linux"
