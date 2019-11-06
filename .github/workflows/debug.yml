@@ -7,13 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: sudo apt-get install xvfb
-    - name: npm install, build, and test
-      run: |
-        npm i
-        xvfb-run --auto-servernum npm test
-      env:
-        CI: true
     - name: Cleanup xvfb pidx
       uses: bcomnes/cleanup-xvfb@v1
     - name: TestCafe
