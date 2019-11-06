@@ -14,8 +14,8 @@ jobs:
         xvfb-run --auto-servernum npm test
       env:
         CI: true
-        - name: Cleanup xvfb pidx
-          uses: bcomnes/cleanup-xvfb@v1
+    - name: Cleanup xvfb pidx
+      uses: bcomnes/cleanup-xvfb@v1
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
       with:
