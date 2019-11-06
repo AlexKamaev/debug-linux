@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Take photo of github.com
+      uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
+      with:
+        url: https://github.com
     - uses: actions/checkout@v1
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
