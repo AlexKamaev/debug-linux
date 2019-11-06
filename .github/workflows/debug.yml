@@ -6,11 +6,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Take photo of github.com
-      uses: "lannonbr/puppeteer-screenshot-action@1.0.0"
-      with:
-        url: https://github.com
     - uses: actions/checkout@v1
+    - run: sudo apt-get install xvfb
+    - name: npm install, build, and test
+      run: |
+        npm i
+        xvfb-run --auto-servernum npm test
+      env:
+        CI: true
+        - name: Cleanup xvfb pidx
+          uses: bcomnes/cleanup-xvfb@v1
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
       with:
