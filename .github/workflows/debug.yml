@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: Xvfb -ac :99 -screen 0 1280x1024x16 > /dev/null 2>&1 &
+    - run: |
+        export DISPLAY=:99.0
+        Xvfb start
+        sleep 3
+        fluxbox >/dev/null 2>&1 &
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
       with:
