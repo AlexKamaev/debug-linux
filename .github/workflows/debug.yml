@@ -10,5 +10,5 @@ jobs:
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@v0.0.1-alpha.1
       with:
-        testCafeArguments: "chrome tests --dev"
+        testCafeArguments: "\"chrome --window-size=1280,900 \" tests --dev"
         branch: "debug-linux"
