@@ -16,7 +16,7 @@ jobs:
     - name: TestCafe
       uses: AlexKamaev/testcafe-action@master
       with:
-        testCafeArguments: "chrome tests --dev"
+        args: "chrome tests --dev"
         branch: "debug-linux"
 
 
