@@ -17,5 +17,6 @@ jobs:
       uses: AlexKamaev/testcafe-action@master
       with:
         args: "chrome tests --dev"
+        branch: "debug-linux"
 
 
