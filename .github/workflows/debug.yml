@@ -7,12 +7,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest]
     steps:
     - uses: actions/checkout@v1
     - name: TestCafe
-      uses: AlexKamaev/testcafe-docker-action@master
+      uses: AlexKamaev/testcafe-action@master
       with:
-        args: "chromium tests --dev"
+        args: "chrome tests --dev"
+        branch: "debug-linux"
 
 
